@@ -1,6 +1,6 @@
 # Blueprint
 
-Blueprint Go package. Holds interfaces and structs that are used to create a plugin for the Power project.
+Blueprint Go package. Holds necessary interfaces and structs for building plugins. Part of the power project.
 
 [![tag](https://img.shields.io/github/tag/zcubbs/blueprint)](https://github.com/zcubbs/blueprint/releases)
 ![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.21-%23007d9c)
