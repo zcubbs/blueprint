@@ -67,3 +67,23 @@ type LoadSpecResponse struct {
 	Spec  Spec
 	Error error
 }
+
+// Dispense returns the actual blueprint plugin implementation
+func (b *RPCPluginClient) Dispense() (Generator, error) {
+	rpcClient, err := b.client.Client()
+	if err != nil {
+		return nil, err
+	}
+
+	raw, err := rpcClient.Dispense("blueprint")
+	if err != nil {
+		return nil, err
+	}
+
+	return raw.(Generator), nil
+}
+
+// Cleanup should be called to clean up the client resources
+func (b *RPCPluginClient) Cleanup() {
+	b.client.Kill()
+}
